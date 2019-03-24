@@ -1,0 +1,111 @@
+{
+	"variables": [],
+	"info": {
+		"name": "AuthApiAdonis",
+		"_postman_id": "2c7dcfea-9ebf-0bca-f7b9-824203fe53be",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3333/api/v1/auth/register",
+			"request": {
+				"url": "http://localhost:3333/api/v1/auth/register",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"youremail@gmail.com\",\r\n    \"password\": \"yourpassword\",\r\n    \"username\": \"yourusername\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3333/api/v1/auth/sign-in",
+			"request": {
+				"url": "http://localhost:3333/api/v1/auth/sign-in",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"youremail@gmail.com\",\r\n    \"password\": \"yourpassword\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3333/api/v1/auth/token/refresh",
+			"request": {
+				"url": "http://localhost:3333/api/v1/auth/token/refresh",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refresh_token\": \"415c8de74124129516e360e1bec7553938c84222cf5c7edc272a07129fed66e2420226d7cbe28a047880d0368c7b3537TLTOMfxQjlHcNAxF8FOoRfM+gZ/BmYdEPSmHC8IrleTCHRKh7x4lwrtvzG6N1RT1\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3333/api/v1/user/me",
+			"request": {
+				"url": "http://localhost:3333/api/v1/user/me",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refresh_token\": \"415c8de74124129516e360e1bec7553938c84222cf5c7edc272a07129fed66e2420226d7cbe28a047880d0368c7b3537TLTOMfxQjlHcNAxF8FOoRfM+gZ/BmYdEPSmHC8IrleTCHRKh7x4lwrtvzG6N1RT1\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3333/api/v1/auth/token/refresh",
+			"request": {
+				"url": "http://localhost:3333/api/v1/auth/token/refresh",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refresh_token\": \"b4f1d7c4d42b3f85bfa01c279da7cad0846503cad4b7a646e54aeb2358e5c8ab90da23b1cedab4d111cb3f5fb364a2d2cKJ6vZkuj72+9hBV6eLfI9A/TD+w115BY5dF8yeHv64vc+6a31q9JNhRvuwvCqfD\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

@@ -26,7 +26,7 @@
     "@adonisjs/fold": "^4.0.5",
     "@adonisjs/framework": "^4.0.28",
     "@adonisjs/ignitor": "^1.0.14",
-    "@adonisjs/lucid": "^4.1.3",
+    "@adonisjs/lucid": "^5.0.2",
     "@adonisjs/validator": "^4.0.9",
     "mysql": "^2.15.0"
   },

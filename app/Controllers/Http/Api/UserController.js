@@ -4,7 +4,9 @@ class UserController {
       const { email, username } = await auth.getUser();
       return { email, username };
     } catch (error) {
-      response.send('Missing or invalid jwt token');
+      response.status(401).send({
+        error: 'Missing or invalid jwt token'
+      });
     }
   }
 }

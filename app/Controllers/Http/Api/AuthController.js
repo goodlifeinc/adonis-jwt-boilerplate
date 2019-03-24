@@ -1,5 +1,4 @@
-const Hash = use('Hash');
-const { validate } = use('Validator');
+const { validateAll } = use('Validator');
 const Encryption = use('Encryption');
 const User = use('App/Models/User');
 const Token = use('App/Models/Token');
@@ -13,7 +12,7 @@ class AuthController {
 
     const { email, password } = request.only(['email', 'password']);
 
-    const validation = await validate({ email, password }, rules);
+    const validation = await validateAll({ email, password }, rules);
 
     if (!validation.fails()) {
       try {
@@ -39,17 +38,17 @@ class AuthController {
       'password'
     ]);
 
-    const validation = await validate({ email, username, password }, rules);
+    const validation = await validateAll({ email, username, password }, rules);
 
     if (!validation.fails()) {
       try {
         const user = await User.create({ email, username, password });
         return response.send({ message: 'User has been created' });
       } catch (err) {
-        response.status(401).send({ error: 'Please try again' });
+        response.status(400).send({ error: 'Please try again' });
       }
     } else {
-      response.status(401).send(validation.messages());
+      response.status(400).send(validation.messages());
     }
   }
 
@@ -60,7 +59,7 @@ class AuthController {
 
     const { refresh_token } = request.only(['refresh_token']);
 
-    const validation = await validate({ refresh_token }, rules);
+    const validation = await validateAll({ refresh_token }, rules);
 
     if (!validation.fails()) {
       try {
@@ -82,7 +81,7 @@ class AuthController {
 
     const { refresh_token } = request.only(['refresh_token']);
 
-    const validation = await validate({ refresh_token }, rules);
+    const validation = await validateAll({ refresh_token }, rules);
 
     const decrypted = Encryption.decrypt(refresh_token);
 

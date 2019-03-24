@@ -49,7 +49,7 @@ module.exports = {
   mysql: {
     client: 'mysql',
     connection: {
-      socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock',
+      // socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock',
       host: Env.get('DB_HOST', 'localhost'),
       port: Env.get('DB_PORT', ''),
       user: Env.get('DB_USER', 'root'),
